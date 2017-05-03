@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request as ReceiveData;
-use App\Request;
+use Illuminate\Http\Request;
+use App\Balance;
 
-class RequestController extends Controller
+class BalanceController extends Controller
 {
    /**
    * Display a listing of the resource.
@@ -14,7 +14,7 @@ class RequestController extends Controller
    */
    public function index()
    {
-      return view('admin.mrf.request.index');
+      return view('admin.mrf.balance.index');
    }
 
    /**

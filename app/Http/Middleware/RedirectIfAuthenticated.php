@@ -18,7 +18,7 @@ class RedirectIfAuthenticated
    public function handle($request, Closure $next, $guard = null)
    {
       if (Auth::guard($guard)->check()) {
-         return redirect('exodus/material_requisition_tool/home');
+         return redirect('exodus/'.Auth::user()->form_type.'/home');
       }
 
       return $next($request);

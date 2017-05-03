@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Session;
+use Auth;
 
 class LoginController extends Controller
 {
@@ -26,7 +27,7 @@ class LoginController extends Controller
    *
    * @var string
    */
-   protected $redirectTo = 'exodus/material_requisition_tool/home';
+   protected $redirectTo = '/home';
 
    /**
    * Create a new controller instance.
@@ -38,13 +39,20 @@ class LoginController extends Controller
       $this->middleware('guest')->except('logout');
    }
 
-   public function authenticated($request, $user)
+   public function authenticated()
    {
-      Session::flash('loginMsg', 'You have successfully logged in. Welcome to Material Requisition Form.');
+      $formType = str_replace('_', ' ', Auth::user()->form_type);
+
+      Session::flash('loginMsg', 'You have successfully logged in. Welcome to ' . ucwords($formType) . '.');
    }
 
    public function showLoginForm()
    {
       return view('auth.login');
+   }
+
+   public function redirectPath()
+   {
+      return 'exodus/' . Auth::user()->form_type . '/home';
    }
 }

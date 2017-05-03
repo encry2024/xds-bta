@@ -12,20 +12,26 @@
 */
 
 Route::get('/', function () {
-   return view('welcome');
+   return redirect()->to('/login');
 });
 
 Auth::routes();
 
-Route::group(['prefix' => 'exodus/material_requisition_tool'], function() {
-   Route::get('login', 'Auth\LoginController@showLoginForm')->name('mrf_login');
-
+Route::group(['prefix' => 'exodus/material_requisition_form'], function() {
    // HOMEPAGE
-   Route::get('/home', 'HomeController@index')->name('home');
+   Route::get('/home', 'HomeController@mrfIndex')->name('home');
 
    // PROJECT PAGE
    Route::resource('projects', 'ProjectController');
 
    // REQUEST PAGE
    Route::resource('requests', 'RequestController');
+
+   // BALANCE PAGE
+   Route::resource('balances', 'BalanceController');
+});
+
+Route::group(['prefix' => 'exodus/purchase_order_form'], function() {
+   // HOMEPAGE
+   Route::get('/home', 'HomeController@pofIndex')->name('pof_home');
 });

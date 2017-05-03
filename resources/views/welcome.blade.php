@@ -60,7 +60,7 @@
    }
 
    .m-b-md {
-      margin-bottom: 30px;
+      margin-top: -18rem;
    }
    </style>
 </head>
@@ -76,8 +76,7 @@
          </div>
 
          <div class="links">
-            <a href="{{ route('mrf_login') }}">material requisition form</a>
-            <a href="https://laracasts.com">purchase order form</a>
+            <a href="{{ route('login') }}">login</a>
          </div>
       </div>
    </div>

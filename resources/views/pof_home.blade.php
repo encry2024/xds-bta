@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="row">
-   @include('layouts.mrf-sidebar')
+   @include('layouts.pof-sidebar')
    <div class="col-lg-9">
       <div class="panel panel-default">
          <div class="panel-heading"><i class="fa fa-home"></i>&nbsp;&nbsp;Home</div>

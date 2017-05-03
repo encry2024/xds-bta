@@ -7,6 +7,7 @@ use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvi
 
 use App\Project;
 use App\Request;
+use App\Balance;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -32,6 +33,7 @@ class RouteServiceProvider extends ServiceProvider
       // MODEL BINDING
       Route::bind('project', function($value) { return Project::where('id', $value)->first(); });
       Route::bind('request', function($value) { return Request::where('id', $value)->first(); });
+      Route::bind('balance', function($value) { return Balance::where('id', $value)->first(); });
    }
 
    /**

@@ -31,6 +31,7 @@
 </head>
 <body>
    <div id="app">
+      @if(!Request::is('login'))
       <nav class="navbar navbar-default navbar-static-top">
          <div class="container">
             <div class="navbar-header">
@@ -82,6 +83,8 @@
          </div>
       </div>
    </nav>
+   @else
+   @endif
 
    <div class="container">
       @if(Session::has('loginMsg'))
