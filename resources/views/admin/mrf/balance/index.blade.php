@@ -2,10 +2,6 @@
 
 @section('content')
 <div class="row">
-   <div class="alert alert-info alert-message" role="alert"><i class="fa fa-info"></i>&nbsp;&nbsp;This page requires the "Project List" data to complete the functionality of this page...</div>
-</div>
-
-<div class="row">
    @include('layouts.mrf-sidebar')
    <div class="col-lg-9">
       <div class="panel panel-default">

@@ -22,7 +22,7 @@ Route::group(['prefix' => 'exodus/material_requisition_form'], function() {
    Route::get('/home', 'HomeController@mrfIndex')->name('home');
 
    // PROJECT PAGE
-   Route::resource('projects', 'ProjectController');
+   Route::resource('project', 'ProjectController');
 
    // REQUEST PAGE
    Route::resource('requests', 'RequestController');

@@ -2,6 +2,10 @@
 
 @section('content')
 <div class="row">
+   <div class="alert alert-warning alert-message" role="alert"><i class="fa fa-info"></i>&nbsp;&nbsp;</div>
+</div>
+
+<div class="row">
    @include('layouts.mrf-sidebar')
    <div class="col-lg-9">
       <div class="panel panel-default">

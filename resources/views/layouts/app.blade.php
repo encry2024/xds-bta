@@ -86,7 +86,7 @@
    @else
    @endif
 
-   <div class="container">
+   <div class="container-fluid">
       @if(Session::has('loginMsg'))
       <div class="row">
          <div class="alert alert-success alert-message" role="alert">
